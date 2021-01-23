@@ -29576,3 +29576,788 @@ Processing by QuantitiesController#index as */*
 Completed 200 OK in 11ms (Views: 9.9ms | ActiveRecord: 0.6ms)
 
 
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "my-next-website-backend_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "my-next-website-backend_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (1431.2ms)[0m  [1m[35mCREATE DATABASE "recipe-calculator-backend-backend_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (652.0ms)[0m  [1m[35mCREATE DATABASE "recipe-calculator-backend-backend_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE DATABASE "recipe-calculator-backend-backend_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE DATABASE "recipe-calculator-backend-backend_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (33.0ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" bigserial primary key, "name" character varying NOT NULL, "preferred_measure_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "measures" CASCADE[0m
+  ↳ db/schema.rb:22
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE "measures" ("id" bigserial primary key, "measure" character varying NOT NULL, "divisible" boolean DEFAULT TRUE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "quantities" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "quantities" ("id" bigserial primary key, "quantity" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (3.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200920212025)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200919033055),
+(20200918233054);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (9.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-23 10:34:28.774469"], ["updated_at", "2021-01-23 10:34:28.774469"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "ingredients" CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (20.4ms)[0m  [1m[35mCREATE TABLE "ingredients" ("id" bigserial primary key, "name" character varying NOT NULL, "preferred_measure_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "measures" CASCADE[0m
+  ↳ db/schema.rb:22
+  [1m[35m (27.0ms)[0m  [1m[35mCREATE TABLE "measures" ("id" bigserial primary key, "measure" character varying NOT NULL, "divisible" boolean DEFAULT TRUE NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:22
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "quantities" CASCADE[0m
+  ↳ db/schema.rb:29
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "quantities" ("id" bigserial primary key, "quantity" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:29
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20200920212025)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20200919033055),
+(20200918233054);
+
+[0m
+  ↳ db/schema.rb:13
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ db/schema.rb:13
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-01-23 10:34:28.903104"], ["updated_at", "2021-01-23 10:34:28.903104"]]
+  ↳ db/schema.rb:13
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = $1, "updated_at" = $2 WHERE "ar_internal_metadata"."key" = $3[0m  [["value", "test"], ["updated_at", "2021-01-23 10:34:28.907325"], ["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mIngredient Load (1.7ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ db/seeds.rb:3
+  [1m[36mMeasure Load (0.3ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ db/seeds.rb:4
+  [1m[36mQuantity Load (4.2ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (6.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:7
+  [1m[36mMeasure Create (0.3ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "divisible", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["measure", "pinch"], ["divisible", false], ["created_at", "2021-01-23 10:34:28.955630"], ["updated_at", "2021-01-23 10:34:28.955630"]]
+  ↳ db/seeds.rb:7
+  [1m[35m (4.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:7
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:11
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "divisible", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["measure", "to taste"], ["divisible", false], ["created_at", "2021-01-23 10:34:28.961377"], ["updated_at", "2021-01-23 10:34:28.961377"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (3.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:15
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "tbsp"], ["created_at", "2021-01-23 10:34:28.966612"], ["updated_at", "2021-01-23 10:34:28.966612"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mMeasure Create (0.3ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "fl oz"], ["created_at", "2021-01-23 10:34:28.973420"], ["updated_at", "2021-01-23 10:34:28.973420"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "dry cup"], ["created_at", "2021-01-23 10:34:28.978026"], ["updated_at", "2021-01-23 10:34:28.978026"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "wet cup"], ["created_at", "2021-01-23 10:34:28.985829"], ["updated_at", "2021-01-23 10:34:28.985829"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "can (5 oz)"], ["created_at", "2021-01-23 10:34:28.989398"], ["updated_at", "2021-01-23 10:34:28.989398"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "can (6 oz)"], ["created_at", "2021-01-23 10:34:28.993362"], ["updated_at", "2021-01-23 10:34:28.993362"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "can (14.5 oz)"], ["created_at", "2021-01-23 10:34:28.998479"], ["updated_at", "2021-01-23 10:34:28.998479"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "can (15 oz)"], ["created_at", "2021-01-23 10:34:29.001658"], ["updated_at", "2021-01-23 10:34:29.001658"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "can (15.5 oz)"], ["created_at", "2021-01-23 10:34:29.005555"], ["updated_at", "2021-01-23 10:34:29.005555"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "can (28 oz)"], ["created_at", "2021-01-23 10:34:29.008731"], ["updated_at", "2021-01-23 10:34:29.008731"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mMeasure Create (0.1ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "can (29 oz)"], ["created_at", "2021-01-23 10:34:29.012050"], ["updated_at", "2021-01-23 10:34:29.012050"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mMeasure Create (0.1ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "jar (24 oz)"], ["created_at", "2021-01-23 10:34:29.014991"], ["updated_at", "2021-01-23 10:34:29.014991"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[36mMeasure Create (0.1ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "lb"], ["created_at", "2021-01-23 10:34:29.017957"], ["updated_at", "2021-01-23 10:34:29.017957"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "divisible", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["measure", "bunch (long pasta)"], ["divisible", false], ["created_at", "2021-01-23 10:34:29.021990"], ["updated_at", "2021-01-23 10:34:29.021990"]]
+  ↳ db/seeds.rb:67
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:71
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "oz"], ["created_at", "2021-01-23 10:34:29.025239"], ["updated_at", "2021-01-23 10:34:29.025239"]]
+  ↳ db/seeds.rb:71
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:71
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:75
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "divisible", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["measure", "unit"], ["divisible", false], ["created_at", "2021-01-23 10:34:29.028537"], ["updated_at", "2021-01-23 10:34:29.028537"]]
+  ↳ db/seeds.rb:75
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:75
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:79
+  [1m[36mMeasure Create (0.1ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "divisible", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["measure", "clove"], ["divisible", false], ["created_at", "2021-01-23 10:34:29.031696"], ["updated_at", "2021-01-23 10:34:29.031696"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:83
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "tsp"], ["created_at", "2021-01-23 10:34:29.035107"], ["updated_at", "2021-01-23 10:34:29.035107"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:87
+  [1m[36mMeasure Create (0.2ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "divisible", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["measure", "dash"], ["divisible", false], ["created_at", "2021-01-23 10:34:29.039209"], ["updated_at", "2021-01-23 10:34:29.039209"]]
+  ↳ db/seeds.rb:87
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:87
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:91
+  [1m[36mMeasure Create (0.1ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "divisible", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["measure", "stick"], ["divisible", false], ["created_at", "2021-01-23 10:34:29.042532"], ["updated_at", "2021-01-23 10:34:29.042532"]]
+  ↳ db/seeds.rb:91
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:91
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:95
+  [1m[36mMeasure Create (0.1ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "stick (8 oz)"], ["created_at", "2021-01-23 10:34:29.045477"], ["updated_at", "2021-01-23 10:34:29.045477"]]
+  ↳ db/seeds.rb:95
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:95
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:99
+  [1m[36mMeasure Create (0.1ms)[0m  [1m[32mINSERT INTO "measures" ("measure", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["measure", "cob"], ["created_at", "2021-01-23 10:34:29.049165"], ["updated_at", "2021-01-23 10:34:29.049165"]]
+  ↳ db/seeds.rb:99
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:99
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:104
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Salt"], ["preferred_measure_id", 1], ["created_at", "2021-01-23 10:34:29.055692"], ["updated_at", "2021-01-23 10:34:29.055692"]]
+  ↳ db/seeds.rb:104
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:104
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:109
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pepper"], ["preferred_measure_id", 2], ["created_at", "2021-01-23 10:34:29.060348"], ["updated_at", "2021-01-23 10:34:29.060348"]]
+  ↳ db/seeds.rb:109
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:109
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:114
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Olive Oil"], ["preferred_measure_id", 3], ["created_at", "2021-01-23 10:34:29.063732"], ["updated_at", "2021-01-23 10:34:29.063732"]]
+  ↳ db/seeds.rb:114
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:114
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:119
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vegetable Oil"], ["preferred_measure_id", 3], ["created_at", "2021-01-23 10:34:29.067014"], ["updated_at", "2021-01-23 10:34:29.067014"]]
+  ↳ db/seeds.rb:119
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:119
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:124
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "All Purpose Flour"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.069865"], ["updated_at", "2021-01-23 10:34:29.069865"]]
+  ↳ db/seeds.rb:124
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:124
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:129
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Granulated Sugar"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.073164"], ["updated_at", "2021-01-23 10:34:29.073164"]]
+  ↳ db/seeds.rb:129
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:129
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:134
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chicken Stock"], ["preferred_measure_id", 6], ["created_at", "2021-01-23 10:34:29.077650"], ["updated_at", "2021-01-23 10:34:29.077650"]]
+  ↳ db/seeds.rb:134
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:134
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:139
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chicken Broth"], ["preferred_measure_id", 6], ["created_at", "2021-01-23 10:34:29.081099"], ["updated_at", "2021-01-23 10:34:29.081099"]]
+  ↳ db/seeds.rb:139
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:139
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:144
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Beef Stock"], ["preferred_measure_id", 6], ["created_at", "2021-01-23 10:34:29.084283"], ["updated_at", "2021-01-23 10:34:29.084283"]]
+  ↳ db/seeds.rb:144
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:144
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:149
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Beef Broth"], ["preferred_measure_id", 6], ["created_at", "2021-01-23 10:34:29.087792"], ["updated_at", "2021-01-23 10:34:29.087792"]]
+  ↳ db/seeds.rb:149
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:149
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:154
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Canned Tomatoes"], ["preferred_measure_id", 9], ["created_at", "2021-01-23 10:34:29.090872"], ["updated_at", "2021-01-23 10:34:29.090872"]]
+  ↳ db/seeds.rb:154
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:154
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:159
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tomato Sauce"], ["preferred_measure_id", 14], ["created_at", "2021-01-23 10:34:29.093981"], ["updated_at", "2021-01-23 10:34:29.093981"]]
+  ↳ db/seeds.rb:159
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:159
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:164
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tomato Paste"], ["preferred_measure_id", 8], ["created_at", "2021-01-23 10:34:29.097822"], ["updated_at", "2021-01-23 10:34:29.097822"]]
+  ↳ db/seeds.rb:164
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:164
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:169
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Canned White Beans"], ["preferred_measure_id", 11], ["created_at", "2021-01-23 10:34:29.100937"], ["updated_at", "2021-01-23 10:34:29.100937"]]
+  ↳ db/seeds.rb:169
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:169
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:174
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dry White Beans"], ["preferred_measure_id", 15], ["created_at", "2021-01-23 10:34:29.103913"], ["updated_at", "2021-01-23 10:34:29.103913"]]
+  ↳ db/seeds.rb:174
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:174
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:179
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Canned Black Beans"], ["preferred_measure_id", 11], ["created_at", "2021-01-23 10:34:29.106791"], ["updated_at", "2021-01-23 10:34:29.106791"]]
+  ↳ db/seeds.rb:179
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:179
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:184
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dry Black Beans"], ["preferred_measure_id", 15], ["created_at", "2021-01-23 10:34:29.109731"], ["updated_at", "2021-01-23 10:34:29.109731"]]
+  ↳ db/seeds.rb:184
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:184
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:189
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Canned Red Kidney Beans"], ["preferred_measure_id", 11], ["created_at", "2021-01-23 10:34:29.112630"], ["updated_at", "2021-01-23 10:34:29.112630"]]
+  ↳ db/seeds.rb:189
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:189
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:194
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dry Red Kidney Beans"], ["preferred_measure_id", 15], ["created_at", "2021-01-23 10:34:29.115359"], ["updated_at", "2021-01-23 10:34:29.115359"]]
+  ↳ db/seeds.rb:194
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:194
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:199
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Canned Tuna"], ["preferred_measure_id", 7], ["created_at", "2021-01-23 10:34:29.118272"], ["updated_at", "2021-01-23 10:34:29.118272"]]
+  ↳ db/seeds.rb:199
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:199
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:204
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Tuna Steak"], ["preferred_measure_id", 15], ["created_at", "2021-01-23 10:34:29.122146"], ["updated_at", "2021-01-23 10:34:29.122146"]]
+  ↳ db/seeds.rb:204
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:204
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:209
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Pasta (Spaghetti)"], ["preferred_measure_id", 16], ["created_at", "2021-01-23 10:34:29.125080"], ["updated_at", "2021-01-23 10:34:29.125080"]]
+  ↳ db/seeds.rb:209
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:209
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:214
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dry Rice"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.128013"], ["updated_at", "2021-01-23 10:34:29.128013"]]
+  ↳ db/seeds.rb:214
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:214
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:219
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Lentils"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.131319"], ["updated_at", "2021-01-23 10:34:29.131319"]]
+  ↳ db/seeds.rb:219
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:219
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:224
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dry Split Peas"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.134148"], ["updated_at", "2021-01-23 10:34:29.134148"]]
+  ↳ db/seeds.rb:224
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:224
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:229
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bread Crumbs"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.137013"], ["updated_at", "2021-01-23 10:34:29.137013"]]
+  ↳ db/seeds.rb:229
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:229
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:234
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fresh Onion"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.140059"], ["updated_at", "2021-01-23 10:34:29.140059"]]
+  ↳ db/seeds.rb:234
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:234
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:239
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Potato"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.142762"], ["updated_at", "2021-01-23 10:34:29.142762"]]
+  ↳ db/seeds.rb:239
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:239
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:244
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Fresh Garlic"], ["preferred_measure_id", 19], ["created_at", "2021-01-23 10:34:29.145549"], ["updated_at", "2021-01-23 10:34:29.145549"]]
+  ↳ db/seeds.rb:244
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:244
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:249
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Vinegar"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.148506"], ["updated_at", "2021-01-23 10:34:29.148506"]]
+  ↳ db/seeds.rb:249
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:249
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:254
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Soy Sauce"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.151388"], ["updated_at", "2021-01-23 10:34:29.151388"]]
+  ↳ db/seeds.rb:254
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:254
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:259
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Teriyaki Sauce"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.154724"], ["updated_at", "2021-01-23 10:34:29.154724"]]
+  ↳ db/seeds.rb:259
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:259
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:264
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Worcestershire Sauce"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.157827"], ["updated_at", "2021-01-23 10:34:29.157827"]]
+  ↳ db/seeds.rb:264
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:264
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:269
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Hot Sauce"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.160744"], ["updated_at", "2021-01-23 10:34:29.160744"]]
+  ↳ db/seeds.rb:269
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:269
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:274
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dried Basil"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.164536"], ["updated_at", "2021-01-23 10:34:29.164536"]]
+  ↳ db/seeds.rb:274
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:274
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:279
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Bay Leaf"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.167936"], ["updated_at", "2021-01-23 10:34:29.167936"]]
+  ↳ db/seeds.rb:279
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:279
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:284
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cayenne Powder"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.170995"], ["updated_at", "2021-01-23 10:34:29.170995"]]
+  ↳ db/seeds.rb:284
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:284
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:289
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Crushed Red Pepper Flakes"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.173911"], ["updated_at", "2021-01-23 10:34:29.173911"]]
+  ↳ db/seeds.rb:289
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:289
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:294
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Curry Powder"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.177472"], ["updated_at", "2021-01-23 10:34:29.177472"]]
+  ↳ db/seeds.rb:294
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:294
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:299
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Seasoned (Seasoning) Salt"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.180668"], ["updated_at", "2021-01-23 10:34:29.180668"]]
+  ↳ db/seeds.rb:299
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:299
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:304
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chili Powder"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.183758"], ["updated_at", "2021-01-23 10:34:29.183758"]]
+  ↳ db/seeds.rb:304
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:304
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:309
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cumin"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.186552"], ["updated_at", "2021-01-23 10:34:29.186552"]]
+  ↳ db/seeds.rb:309
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:309
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:314
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cinnamon Powder"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.189413"], ["updated_at", "2021-01-23 10:34:29.189413"]]
+  ↳ db/seeds.rb:314
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:314
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:319
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cinnamon Stick"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.192490"], ["updated_at", "2021-01-23 10:34:29.192490"]]
+  ↳ db/seeds.rb:319
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:319
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:324
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Garlic Powder"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.195287"], ["updated_at", "2021-01-23 10:34:29.195287"]]
+  ↳ db/seeds.rb:324
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:324
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:329
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Onion Powder"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.198976"], ["updated_at", "2021-01-23 10:34:29.198976"]]
+  ↳ db/seeds.rb:329
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:329
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:334
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Oregano"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.201875"], ["updated_at", "2021-01-23 10:34:29.201875"]]
+  ↳ db/seeds.rb:334
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:334
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:339
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Paprika"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.205199"], ["updated_at", "2021-01-23 10:34:29.205199"]]
+  ↳ db/seeds.rb:339
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:339
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:344
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dried Parsley"], ["preferred_measure_id", 21], ["created_at", "2021-01-23 10:34:29.208088"], ["updated_at", "2021-01-23 10:34:29.208088"]]
+  ↳ db/seeds.rb:344
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:344
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:349
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Egg"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.210945"], ["updated_at", "2021-01-23 10:34:29.210945"]]
+  ↳ db/seeds.rb:349
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:349
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:354
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Egg White (Unit)"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.214237"], ["updated_at", "2021-01-23 10:34:29.214237"]]
+  ↳ db/seeds.rb:354
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:354
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:359
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Egg White (Fl Oz)"], ["preferred_measure_id", 4], ["created_at", "2021-01-23 10:34:29.217245"], ["updated_at", "2021-01-23 10:34:29.217245"]]
+  ↳ db/seeds.rb:359
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:359
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:364
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Egg Yolk"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.220147"], ["updated_at", "2021-01-23 10:34:29.220147"]]
+  ↳ db/seeds.rb:364
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:364
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:369
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Milk"], ["preferred_measure_id", 6], ["created_at", "2021-01-23 10:34:29.223412"], ["updated_at", "2021-01-23 10:34:29.223412"]]
+  ↳ db/seeds.rb:369
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:369
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:374
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Butter"], ["preferred_measure_id", 23], ["created_at", "2021-01-23 10:34:29.234875"], ["updated_at", "2021-01-23 10:34:29.234875"]]
+  ↳ db/seeds.rb:374
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:374
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:379
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Margarine"], ["preferred_measure_id", 3], ["created_at", "2021-01-23 10:34:29.239287"], ["updated_at", "2021-01-23 10:34:29.239287"]]
+  ↳ db/seeds.rb:379
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:379
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:384
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Shortening"], ["preferred_measure_id", 6], ["created_at", "2021-01-23 10:34:29.242777"], ["updated_at", "2021-01-23 10:34:29.242777"]]
+  ↳ db/seeds.rb:384
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:384
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:389
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ketchup (Catsup)"], ["preferred_measure_id", 3], ["created_at", "2021-01-23 10:34:29.245838"], ["updated_at", "2021-01-23 10:34:29.245838"]]
+  ↳ db/seeds.rb:389
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:389
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:394
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mustard"], ["preferred_measure_id", 20], ["created_at", "2021-01-23 10:34:29.249242"], ["updated_at", "2021-01-23 10:34:29.249242"]]
+  ↳ db/seeds.rb:394
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:394
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:399
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Mayonnaise"], ["preferred_measure_id", 6], ["created_at", "2021-01-23 10:34:29.251973"], ["updated_at", "2021-01-23 10:34:29.251973"]]
+  ↳ db/seeds.rb:399
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:399
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:404
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cheese"], ["preferred_measure_id", 17], ["created_at", "2021-01-23 10:34:29.255803"], ["updated_at", "2021-01-23 10:34:29.255803"]]
+  ↳ db/seeds.rb:404
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:404
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:409
+  [1m[36mIngredient Create (0.3ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Frozen Corn"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.258480"], ["updated_at", "2021-01-23 10:34:29.258480"]]
+  ↳ db/seeds.rb:409
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:409
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:414
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Corn On The Cob"], ["preferred_measure_id", 24], ["created_at", "2021-01-23 10:34:29.262142"], ["updated_at", "2021-01-23 10:34:29.262142"]]
+  ↳ db/seeds.rb:414
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:414
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:419
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Frozen Spinach"], ["preferred_measure_id", 17], ["created_at", "2021-01-23 10:34:29.265715"], ["updated_at", "2021-01-23 10:34:29.265715"]]
+  ↳ db/seeds.rb:419
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:419
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:424
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Frozen Peas"], ["preferred_measure_id", 5], ["created_at", "2021-01-23 10:34:29.268497"], ["updated_at", "2021-01-23 10:34:29.268497"]]
+  ↳ db/seeds.rb:424
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:424
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:429
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Ground Beef"], ["preferred_measure_id", 15], ["created_at", "2021-01-23 10:34:29.272109"], ["updated_at", "2021-01-23 10:34:29.272109"]]
+  ↳ db/seeds.rb:429
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:429
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:434
+  [1m[36mIngredient Create (0.2ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chicken Breast"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.274904"], ["updated_at", "2021-01-23 10:34:29.274904"]]
+  ↳ db/seeds.rb:434
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:434
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:439
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chicken Thigh"], ["preferred_measure_id", 18], ["created_at", "2021-01-23 10:34:29.277972"], ["updated_at", "2021-01-23 10:34:29.277972"]]
+  ↳ db/seeds.rb:439
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:439
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:444
+  [1m[36mIngredient Create (0.1ms)[0m  [1m[32mINSERT INTO "ingredients" ("name", "preferred_measure_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chicken"], ["preferred_measure_id", 15], ["created_at", "2021-01-23 10:34:29.281169"], ["updated_at", "2021-01-23 10:34:29.281169"]]
+  ↳ db/seeds.rb:444
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:444
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:449
+  [1m[36mQuantity Create (0.3ms)[0m  [1m[32mINSERT INTO "quantities" ("quantity", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["quantity", "1/8"], ["created_at", "2021-01-23 10:34:29.287117"], ["updated_at", "2021-01-23 10:34:29.287117"]]
+  ↳ db/seeds.rb:449
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:449
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:450
+  [1m[36mQuantity Create (0.1ms)[0m  [1m[32mINSERT INTO "quantities" ("quantity", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["quantity", "1/4"], ["created_at", "2021-01-23 10:34:29.290497"], ["updated_at", "2021-01-23 10:34:29.290497"]]
+  ↳ db/seeds.rb:450
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:450
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:451
+  [1m[36mQuantity Create (0.1ms)[0m  [1m[32mINSERT INTO "quantities" ("quantity", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["quantity", "1/2"], ["created_at", "2021-01-23 10:34:29.293476"], ["updated_at", "2021-01-23 10:34:29.293476"]]
+  ↳ db/seeds.rb:451
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:451
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:452
+  [1m[36mQuantity Create (0.1ms)[0m  [1m[32mINSERT INTO "quantities" ("quantity", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["quantity", "3/4"], ["created_at", "2021-01-23 10:34:29.296106"], ["updated_at", "2021-01-23 10:34:29.296106"]]
+  ↳ db/seeds.rb:452
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:452
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:453
+  [1m[36mQuantity Create (0.1ms)[0m  [1m[32mINSERT INTO "quantities" ("quantity", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["quantity", "1/3"], ["created_at", "2021-01-23 10:34:29.299498"], ["updated_at", "2021-01-23 10:34:29.299498"]]
+  ↳ db/seeds.rb:453
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:453
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:454
+  [1m[36mQuantity Create (0.1ms)[0m  [1m[32mINSERT INTO "quantities" ("quantity", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["quantity", "2/3"], ["created_at", "2021-01-23 10:34:29.302285"], ["updated_at", "2021-01-23 10:34:29.302285"]]
+  ↳ db/seeds.rb:454
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:454
+Started GET "/measures" for 127.0.0.1 at 2021-01-23 03:36:16 -0700
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/steven/.rbenv/versions/2.6.1/lib/ruby/gems/2.6.0/gems/activerecord-5.2.4.4/lib/active_record/log_subscriber.rb:98
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.4ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 18ms (Views: 6.4ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/ingredients" for 127.0.0.1 at 2021-01-23 03:36:16 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (6.3ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 25ms (Views: 10.9ms | ActiveRecord: 13.6ms)
+
+
+Started GET "/quantities" for 127.0.0.1 at 2021-01-23 03:36:16 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (1.1ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 13ms (Views: 4.1ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/measures" for 127.0.0.1 at 2021-01-23 03:42:03 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.6ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/ingredients" for 127.0.0.1 at 2021-01-23 03:42:04 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (0.6ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/quantities" for 127.0.0.1 at 2021-01-23 03:42:04 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.8ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 3ms (Views: 1.6ms | ActiveRecord: 0.8ms)
+
+
+Started PUT "/records_update" for 127.0.0.1 at 2021-01-23 03:42:38 -0700
+Processing by ApplicationController#records_update as */*
+  Parameters: {"divisible"=>true, "quantity"=>{"id"=>3, "quantity"=>"1/2"}, "measure"=>{"id"=>6, "measure"=>"wet cup", "divisible"=>true}, "ingredient"=>{"id"=>10, "name"=>"Beef Broth", "preferredMeasure"=>{"id"=>6, "measure"=>"wet cup", "divisible"=>true}, "preferredMeasureId"=>6}, "application"=>{"divisible"=>true, "quantity"=>{"id"=>3, "quantity"=>"1/2"}, "measure"=>{"id"=>6, "measure"=>"wet cup", "divisible"=>true}, "ingredient"=>{"id"=>10, "name"=>"Beef Broth", "preferredMeasure"=>{"id"=>6, "measure"=>"wet cup", "divisible"=>true}, "preferredMeasureId"=>6}}}
+  [1m[36mQuantity Load (0.3ms)[0m  [1m[34mSELECT  "quantities".* FROM "quantities" WHERE "quantities"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:3
+  [1m[36mMeasure Load (0.2ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:4
+  [1m[36mIngredient Load (0.1ms)[0m  [1m[34mSELECT  "ingredients".* FROM "ingredients" WHERE "ingredients"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:5
+  [1m[36mCACHE Measure Load (0.0ms)[0m  [1m[34mSELECT  "measures".* FROM "measures" WHERE "measures"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/ingredient.rb:11
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/application_controller.rb:14
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/application_controller.rb:14
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/measures" for 127.0.0.1 at 2021-01-23 03:42:38 -0700
+Processing by MeasuresController#index as */*
+  [1m[36mMeasure Load (0.3ms)[0m  [1m[34mSELECT "measures".* FROM "measures"[0m
+  ↳ app/controllers/measures_controller.rb:3
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/ingredients" for 127.0.0.1 at 2021-01-23 03:42:38 -0700
+Processing by IngredientsController#index as */*
+  [1m[36mIngredient Load (0.2ms)[0m  [1m[34mSELECT "ingredients".* FROM "ingredients"[0m
+  ↳ app/controllers/ingredients_controller.rb:3
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/quantities" for 127.0.0.1 at 2021-01-23 03:42:38 -0700
+Processing by QuantitiesController#index as */*
+  [1m[36mQuantity Load (0.2ms)[0m  [1m[34mSELECT "quantities".* FROM "quantities"[0m
+  ↳ app/controllers/quantities_controller.rb:3
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/calculate" for 127.0.0.1 at 2021-01-23 03:42:45 -0700
+Processing by ApplicationController#calculate as */*
+  Parameters: {"recipe"=>[{"ingredient"=>"Beef Broth", "quantity"=>"1/2", "measure"=>"wet cup", "divisible"=>true}], "makes"=>"1", "desired"=>"2", "application"=>{"recipe"=>[{"ingredient"=>"Beef Broth", "quantity"=>"1/2", "measure"=>"wet cup", "divisible"=>true}], "makes"=>"1", "desired"=>"2"}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms)
+
+
